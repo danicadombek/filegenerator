@@ -39,12 +39,11 @@ const questions = [
   {
     type: 'input',
     name: 'name',
-    message:
-      'Which functions and files would you like to create? Plase seperate by comma.',
+    message: 'Which functions and files would you like to create?',
   },
   {
     type: 'checkbox',
-    message: 'Plase select a file type',
+    message: 'Please select a file type',
     name: 'fileTypes',
     choices: [{ name: 'component' }, { name: 'spec' }, { name: 'stories' }],
     validate(answer) {
