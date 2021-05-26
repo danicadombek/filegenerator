@@ -8,6 +8,18 @@ const questions = [
     message:
       'Which functions and files would you like to create? Please seperate by comma.',
   },
+  {
+    type: 'checkbox',
+    message: 'Please select a file type',
+    name: 'files',
+    choices: [{ name: 'Component' }, { name: 'Spec' }, { name: 'Stories' }],
+    validate(answer) {
+      if (answer.legth < 1) {
+        return 'You must choosen at least one file type.'
+      }
+      return true
+    },
+  },
 ]
 
 inquirer.prompt(questions).then(answers => {
