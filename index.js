@@ -6,7 +6,16 @@ const rl = readline.createInterface({
   output: process.stdout,
 })
 
-rl.question('Hello, how are you?', answer => {
-  console.log(answer)
-  rl.close()
-})
+rl.question(
+  'Which functions and files would you like to create? Please seperate by comma.',
+  answer => {
+    answer
+      .split(',')
+      //ändert string in ein array
+      .map(name => name.trim())
+      //entfernt leerzeichen
+      .forEach(answer => writeFile(answer))
+    //erstellt das für jede antwort
+    rl.close()
+  }
+)

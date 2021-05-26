@@ -4,7 +4,8 @@ function writeFile(name) {
   fs.writeFileSync(
     `./${name}.js`,
     `function ${name}() {
-      }`
+        
+}`
   )
 }
 
